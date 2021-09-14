@@ -3,6 +3,7 @@
     .controls {
         justify-content: space-between;
         color: var(--main-text);
+        transition: color 1s ease-in-out;
     }
 
     .toggle {
@@ -20,6 +21,7 @@
             height: 1.625rem;
 
             background-color: var(--screen-background);
+            transition: background-color 1s ease-in-out;
             border-radius: 1.25rem;
 
             display: grid;
@@ -44,6 +46,7 @@
             height: 0.8125rem;
             width: 0.8125rem;
 
+            transition: color 1s ease-in-out, border 1s ease-in-out;
             background-color: var(--btn-third-b);
             border: 1px solid var(--btn-third-b);
             border-radius: 50%;
@@ -65,6 +68,7 @@
 
         background-color: var(--screen-background);
         color: var(--main-text);
+        transition: color 1s ease-in-out, background-color 1s ease-in-out;
 
         border: none;
         outline: none !important;
@@ -84,6 +88,7 @@
         grid-gap: 0.625rem;
 
         background-color: var(--button-container);
+        transition: background-color 1s ease-in-out;
     }
 
     &__button {
@@ -100,7 +105,7 @@
         border-bottom-style: inset !important;
         border-bottom-width: 0.25rem !important;
 
-        transition: border .1s ease-in-out;
+        transition: color 1s ease-in-out, border .1s ease-in-out, background-color 1s ease-in-out, border-bottom-color 1s ease-in-out;
 
         &:active {
             border: none !important;

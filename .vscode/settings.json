@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "PUBLISH"
+        "PUBLISH",
+        "UI/UX"
     ]
 }
