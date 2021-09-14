@@ -1,0 +1,63 @@
+$b-font-size:2rem;
+
+// Theme1
+[style="--theme:1;"] {
+    --main-background: #3B4664;
+    --screen-background: #181F32;
+    --button-container: #252D44;
+    --main-text: #fff;
+
+    --btn-primary-b: #EAE3DB;
+    --btn-primary-t: #444452;
+    --btn-primary-s: #D3C8BE;
+
+    --btn-secondary-b: #647299;
+    --btn-secondary-t: #fff;
+    --btn-secondary-s: #435072;
+
+    --btn-third-b: #D33F2E;
+    --btn-third-t: #fff;
+    --btn-third-s: #932518;
+}
+
+
+// Theme2
+[style="--theme:2;"] {
+    --main-background: #E6E6E6;
+    --screen-background: #EEEEEE;
+    --button-container: #D3CDCD;
+    --main-text: #35352B;
+
+    --btn-primary-b: #E5E4E0;
+    --btn-primary-t: #414138;
+    --btn-primary-s: #A2988C;
+
+    --btn-secondary-b: #388187;
+    --btn-secondary-t: #EEFCFC;
+    --btn-secondary-s: #246B70;
+
+    --btn-third-b: #C85401;
+    --btn-third-t: #fff;
+    --btn-third-s: #803200;
+}
+
+
+// Theme3
+[style="--theme:3;"] {
+    --main-background: #17062A;
+    --screen-background: #1E0836;
+    --button-container: #1E0836;
+    --main-text: #FEE639;
+
+    --btn-primary-b: #331B4D;
+    --btn-primary-t: #FFEB4E;
+    --btn-primary-s: #8A21A2;
+
+    --btn-secondary-b: #56077C;
+    --btn-secondary-t: #fff;
+    --btn-secondary-s: #8716B2;
+
+    --btn-third-b: #00DECF;
+    --btn-third-t: #033C3C;
+    --btn-third-s: #7AFFFA;
+}

@@ -1,0 +1,89 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="./dist/css/styles.css")
+        title Document
+    body.theme1
+
+        .calc.container
+
+            .controls.row
+                h1.controls__title calc
+
+                .toggle.row
+                    h2.toggle__title THEME
+
+                    .toggle__body
+                        .toggle__label-container.row
+                            span.toggle__label 1
+                            span.toggle__label 2
+                            span.toggle__label 3
+
+                        #toggle-element.toggle__input
+                            .toggle__button
+                                .toggle__content
+
+            .calc__body
+                input#screen.calc__screen(type="text", pattern="/^[0-9]*\.?[0-9]*$/")
+
+                .calc__buttons
+                    button.calc__button.calc__button--primary(value="7")
+                        span.calc__button--numbers 7
+
+                    button.calc__button.calc__button--primary(value="8")
+                        span.calc__button--numbers 8
+
+                    button.calc__button.calc__button--primary(value="9")
+                        span.calc__button--numbers 9
+
+                    button.calc__button.calc__button--secondary(value="del") DEL
+
+
+                    button.calc__button.calc__button--primary(value="4")
+                        span.calc__button--numbers 4
+
+                    button.calc__button.calc__button--primary(value="5")
+                        span.calc__button--numbers 5
+
+                    button.calc__button.calc__button--primary(value="6")
+                        span.calc__button--numbers 6
+
+                    button.calc__button.calc__button--primary(value="+") +
+
+
+                    button.calc__button.calc__button--primary(value="1")
+                        span.calc__button--numbers 1
+
+                    button.calc__button.calc__button--primary(value="2")
+                        span.calc__button--numbers 2
+
+                    button.calc__button.calc__button--primary(value="3")
+                        span.calc__button--numbers 3
+
+                    button.calc__button.calc__button--primary(value="-") -
+
+
+                    button.calc__button.calc__button--primary(value=".") .
+
+                    button.calc__button.calc__button--primary(value="0")
+                        span.calc__button--numbers 0
+
+                    button.calc__button.calc__button--primary(value="/") /
+
+                    button.calc__button.calc__button--primary(value="x") x
+
+                    button.calc__button.calc__button--secondary.calc__button--reset(value="reset") Reset
+                    button#equal.calc__button.calc__button--equal.calc__button--third(value="=") =
+
+
+        script(src="./app.js")
+
+
+        //- .attribution
+        //-     |   Challenge by
+        //-     a(href="https://www.frontendmentor.io?ref=challenge" target="_blank") Frontend Mentor
+        //-     |   Coded by
+        //-     a(href="https://github.com/rosalesponcer" target="_blank") @rosalesponcer

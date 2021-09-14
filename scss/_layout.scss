@@ -1,0 +1,141 @@
+.calc {
+
+    .controls {
+        justify-content: space-between;
+        color: var(--main-text);
+    }
+
+    .toggle {
+        gap: 10px;
+
+        &__label-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            text-align: center;
+        }
+
+        &__input {
+            width: 4.875rem;
+            height: 1.625rem;
+
+            background-color: var(--screen-background);
+            border-radius: 1.25rem;
+
+            display: grid;
+
+            cursor: pointer;
+        }
+
+        &__button {
+            width: 1.625rem;
+            height: 100%;
+            max-height: 1.625rem;
+
+            transition: transform .5s ease-in-out;
+            transform: translateX(calc(1.625rem * (var(--t) - 1)));
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__content {
+            height: 0.8125rem;
+            width: 0.8125rem;
+
+            background-color: var(--btn-third-b);
+            border: 1px solid var(--btn-third-b);
+            border-radius: 50%;
+        }
+    }
+
+    &__screen,
+    &__buttons {
+        padding: 1.75rem;
+        border-radius: 0.625rem;
+    }
+
+    &__screen {
+        width: 100%;
+        min-height: 6.25rem;
+
+        margin-top: 2.0625rem;
+        margin-bottom: 2.0625rem;
+
+        background-color: var(--screen-background);
+        color: var(--main-text);
+
+        border: none;
+        outline: none !important;
+        text-align: end;
+        font-size: $b-font-size;
+        font-weight: bold !important;
+    }
+
+    &__buttons {
+        display: grid;
+        grid-template-areas:
+            "button button button button"
+            "button button button button"
+            "button button button button"
+            "button button button button"
+            "reset  reset  equal  equal";
+        grid-gap: 0.625rem;
+
+        background-color: var(--button-container);
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-height: 3.75rem;
+
+        outline: none !important;
+        border: none !important;
+        border-radius: 0.3125rem;
+
+        border-bottom-style: inset !important;
+        border-bottom-width: 0.25rem !important;
+
+        transition: border .1s ease-in-out;
+
+        &:active {
+            border: none !important;
+        }
+
+
+        &--primary {
+            background-color: var(--btn-primary-b);
+            color: var(--btn-primary-t);
+            border-bottom-color: var(--btn-primary-s) !important;
+        }
+
+        &--secondary {
+            background-color: var(--btn-secondary-b);
+            color: var(--btn-secondary-t);
+            border-bottom-color: var(--btn-secondary-s) !important;
+        }
+
+        &--third {
+            background-color: var(--btn-third-b);
+            color: var(--btn-third-t);
+            border-bottom-color: var(--btn-third-s) !important;
+        }
+
+        &--reset {
+            grid-area: reset;
+        }
+
+        &--equal {
+            grid-area: equal;
+        }
+
+        &--numbers {
+            color: var(--btn-primary-t);
+            font-size: 1.875rem;
+        }
+    }
+}
