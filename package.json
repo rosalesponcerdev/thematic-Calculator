@@ -4,8 +4,9 @@
   "description": "![Design preview for the Calculator app coding challenge](./design/desktop-preview.jpg)",
   "main": "app.js",
   "scripts": {
-    "build": "pug .",
-    "build:s": "sass scss:dist/css --style=compressed"
+    "build:p": "pug .",
+    "build:s": "sass scss:dist/css --style=compressed",
+    "build":"npm run build:p && npm run build:s"
   },
   "repository": {
     "type": "git",
