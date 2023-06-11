@@ -95,7 +95,6 @@ validateKeyBoardInput = (event) => {
     };
 }
 
-
 const initAction = (value, event) => {
     event && event.stopPropagation();
 
