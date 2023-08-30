@@ -1,9 +1,11 @@
-rm -r /etc/nginx/html/thematic-calculator/
-mkdir /etc/nginx/html/thematic-calculator
+rm -r /var/www/briefcase/thematic-calculator/
+mkdir /var/www/briefcase/thematic-calculator
 
-mkdir /etc/nginx/html/thematic-calculator/imgs /etc/nginx/html/thematic-calculator/dist /etc/nginx/html/thematic-calculator/dist/css
+mkdir /var/www/briefcase/thematic-calculator/imgs /var/www/briefcase/thematic-calculator/dist /var/www/briefcase/thematic-calculator/dist/css
 
-cp -rf ./imgs/* /etc/nginx/html/thematic-calculator/imgs/
-cp -rf ./dist/css/* /etc/nginx/html/thematic-calculator/dist/css/
-cp -rf ./app.js /etc/nginx/html/thematic-calculator/
-cp -rf ./index.html /etc/nginx/html/thematic-calculator/
+mv ./imgs/* /var/www/briefcase/thematic-calculator/imgs/
+mv ./dist/css/* /var/www/briefcase/thematic-calculator/dist/css/
+mv ./app.js /var/www/briefcase/thematic-calculator/
+mv ./index.html /var/www/briefcase/thematic-calculator/
+
+rm -r node_modules/
