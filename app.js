@@ -19,7 +19,7 @@ const equal = document.querySelector("#equal");
 
 const addThemeNumber = (i, element) => {
   document.body.dataset.theme = i;
-  element.style.cssText = `--t:${i}`;
+  element.dataset.t = i;
 
   localStorage.setItem("theme", JSON.stringify({ theme: i }));
 };
