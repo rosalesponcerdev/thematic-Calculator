@@ -1,1 +1,87 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="./dist/css/styles.css"><title>Document</title></head><body class="theme1"><div class="calc container"><div class="controls row"><h1 class="controls__title">calc</h1><div class="toggle row"><h2 class="toggle__title">THEME</h2><div class="toggle__body"><div class="toggle__label-container row"><span class="toggle__label">1</span><span class="toggle__label">2</span><span class="toggle__label">3</span></div><div class="toggle__input" id="toggle-element"><div class="toggle__button"><div class="toggle__content"></div></div></div></div></div></div><div class="calc__body"><input class="calc__screen" id="screen" type="text" pattern="/^[0-9]*.?[0-9]*$/"><div class="calc__buttons"><button class="calc__button calc__button--primary" value="7"><span class="calc__button--numbers">7</span></button><button class="calc__button calc__button--primary" value="8"><span class="calc__button--numbers">8</span></button><button class="calc__button calc__button--primary" value="9"><span class="calc__button--numbers">9</span></button><button class="calc__button calc__button--secondary" value="del">DEL</button><button class="calc__button calc__button--primary" value="4"><span class="calc__button--numbers">4</span></button><button class="calc__button calc__button--primary" value="5"><span class="calc__button--numbers">5</span></button><button class="calc__button calc__button--primary" value="6"><span class="calc__button--numbers">6</span></button><button class="calc__button calc__button--primary" value="+">+</button><button class="calc__button calc__button--primary" value="1"><span class="calc__button--numbers">1</span></button><button class="calc__button calc__button--primary" value="2"><span class="calc__button--numbers">2</span></button><button class="calc__button calc__button--primary" value="3"><span class="calc__button--numbers">3</span></button><button class="calc__button calc__button--primary" value="-">-</button><button class="calc__button calc__button--primary" value=".">.</button><button class="calc__button calc__button--primary" value="0"><span class="calc__button--numbers">0</span></button><button class="calc__button calc__button--primary" value="/">/</button><button class="calc__button calc__button--primary" value="x">x</button><button class="calc__button calc__button--secondary calc__button--reset" value="reset">Reset</button><button class="calc__button calc__button--equal calc__button--third" id="equal" value="=">=</button></div></div></div><script src="./app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/css/styles.css" />
+    <title>Document</title>
+  </head>
+  <body class="theme1">
+    <div class="calc container">
+      <div class="controls row">
+        <h1 class="controls__title">calc</h1>
+        <div class="toggle row">
+          <h2 class="toggle__title">THEME</h2>
+          <div class="toggle__body">
+            <div class="toggle__label-container row">
+              <span class="toggle__label">1</span
+              ><span class="toggle__label">2</span
+              ><span class="toggle__label">3</span>
+            </div>
+            <div class="toggle__input" id="toggle-element">
+              <div class="toggle__button">
+                <div class="toggle__content"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calc__body">
+        <input
+          class="calc__screen"
+          id="screen"
+          type="text"
+          pattern="/^[0-9]*.?[0-9]*$/"
+        />
+        <div class="calc__buttons">
+          <button class="calc__button calc__button--primary" value="7">
+            <span class="calc__button--numbers">7</span></button
+          ><button class="calc__button calc__button--primary" value="8">
+            <span class="calc__button--numbers">8</span></button
+          ><button class="calc__button calc__button--primary" value="9">
+            <span class="calc__button--numbers">9</span></button
+          ><button class="calc__button calc__button--secondary" value="del">
+            DEL</button
+          ><button class="calc__button calc__button--primary" value="4">
+            <span class="calc__button--numbers">4</span></button
+          ><button class="calc__button calc__button--primary" value="5">
+            <span class="calc__button--numbers">5</span></button
+          ><button class="calc__button calc__button--primary" value="6">
+            <span class="calc__button--numbers">6</span></button
+          ><button class="calc__button calc__button--primary" value="+">
+            +</button
+          ><button class="calc__button calc__button--primary" value="1">
+            <span class="calc__button--numbers">1</span></button
+          ><button class="calc__button calc__button--primary" value="2">
+            <span class="calc__button--numbers">2</span></button
+          ><button class="calc__button calc__button--primary" value="3">
+            <span class="calc__button--numbers">3</span></button
+          ><button class="calc__button calc__button--primary" value="-">
+            -</button
+          ><button class="calc__button calc__button--primary" value=".">
+            .</button
+          ><button class="calc__button calc__button--primary" value="0">
+            <span class="calc__button--numbers">0</span></button
+          ><button class="calc__button calc__button--primary" value="/">
+            /</button
+          ><button class="calc__button calc__button--primary" value="x">
+            x</button
+          ><button
+            class="calc__button calc__button--secondary calc__button--reset"
+            value="reset"
+          >
+            Reset</button
+          ><button
+            class="calc__button calc__button--equal calc__button--third"
+            id="equal"
+            value="="
+          >
+            =
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

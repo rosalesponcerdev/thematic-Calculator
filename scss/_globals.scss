@@ -10,19 +10,19 @@ html {
 body {
   background-color: var(--main-background);
 
-  &[data-t="1"] {
+  [data-t="1"] {
     .toggle__button {
       grid-area: theme1;
     }
   }
 
-  &[data-t="2"] {
+  [data-t="2"] {
     .toggle__button {
       grid-area: theme2;
     }
   }
 
-  &[data-t="3"] {
+  [data-t="3"] {
     .toggle__button {
       grid-area: theme3;
     }
