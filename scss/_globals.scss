@@ -10,6 +10,11 @@ html {
 body {
   background-color: var(--main-background);
 
+  .toggle__input {
+    grid-template-areas: "theme1 theme2 theme3";
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   [data-t="1"] {
     .toggle__button {
       grid-area: theme1;
