@@ -1,7 +1,10 @@
 let t = localStorage.getItem("theme");
 
-try { t = JSON.parse(t).theme ? JSON.parse(t).theme : 1; }
-catch (error) { t = 1 }
+try {
+  t = JSON.parse(t).theme ? JSON.parse(t).theme : 1;
+} catch (error) {
+  t = 1;
+}
 
 var result = 0;
 
@@ -9,114 +12,115 @@ var firstView = 0;
 var secondView = 0;
 var inOperation = null;
 
-const toggleRef = document.querySelector('#toggle-element');
-const screen = document.querySelector('#screen');
-const buttons = document.querySelectorAll('button.calc__button');
-const equal = document.querySelector('#equal');
+const toggleRef = document.querySelector("#toggle-element");
+const screen = document.querySelector("#screen");
+const buttons = document.querySelectorAll("button.calc__button");
+const equal = document.querySelector("#equal");
 
 const addThemeNumber = (i, element) => {
-    document.body.style.cssText = `--theme:${i}`;
-    element.style.cssText = `--t:${i}`;
+  document.body.dataset.theme = i;
+  element.style.cssText = `--t:${i}`;
 
-    localStorage.setItem('theme', JSON.stringify({ theme: i }))
-}
+  localStorage.setItem("theme", JSON.stringify({ theme: i }));
+};
 
 const setNewValue = (value) => {
-    screen.value = `${screen.value}${value}`;
+  screen.value = `${screen.value}${value}`;
 
-    result = Number(screen.value);
+  result = Number(screen.value);
 
-    if (inOperation) secondView = result;
-}
+  if (inOperation) secondView = result;
+};
 
 const operations = (type) => {
-    if (type === '=') {
-        makeOperation(inOperation);
-        inOperation = null;
+  if (type === "=") {
+    makeOperation(inOperation);
+    inOperation = null;
 
-        return;
-    }
+    return;
+  }
 
-    if (type === 'del') {
-        screen.value = screen.value.slice(0, -1);
-        result = Number(screen.value)
+  if (type === "del") {
+    screen.value = screen.value.slice(0, -1);
+    result = Number(screen.value);
 
-        return;
-    }
+    return;
+  }
 
-    if (type === 'reset') {
-        screen.value = '';
-        result = 0;
+  if (type === "reset") {
+    screen.value = "";
+    result = 0;
 
-        return;
-    }
+    return;
+  }
 
-    inOperation = type;
-    firstView = result;
-    result = null;
+  inOperation = type;
+  firstView = result;
+  result = null;
 
-    screen.value = result;
-}
+  screen.value = result;
+};
 
 const makeOperation = (inOperation) => {
-    let operation = {
-        '/': () => firstView / secondView,
-        'x': () => firstView * secondView,
-        '-': () => firstView - secondView,
-        '+': () => firstView + secondView,
-    };
+  let operation = {
+    "/": () => firstView / secondView,
+    x: () => firstView * secondView,
+    "-": () => firstView - secondView,
+    "+": () => firstView + secondView,
+  };
 
-    try {
-        screen.value = `${operation[inOperation]()}`;
-        result = Number(screen.value);
-    } catch (error) {
-        console.error(error)
-    }
-
-}
-
+  try {
+    screen.value = `${operation[inOperation]()}`;
+    result = Number(screen.value);
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 validateKeyBoardInput = (event) => {
-    event.stopPropagation();
+  event.stopPropagation();
 
-    let { data } = event;
-    let isValid = /[0-9]|[=]|[/]|[x]|[-]|[+]/gu.test(data) || data === null;
+  let { data } = event;
+  let isValid = /[0-9]|[=]|[/]|[x]|[-]|[+]/gu.test(data) || data === null;
 
-    if (!isValid) {
-        screen.value = result;
-        return
-    };
+  if (!isValid) {
+    screen.value = result;
+    return;
+  }
 
-
-    if (['=', '/', 'x', '-', '+'].includes(data)) initAction(data)
-    else {
-        result = Number(screen.value)
-        if (inOperation) secondView = result;
-    };
-}
+  if (["=", "/", "x", "-", "+"].includes(data)) initAction(data);
+  else {
+    result = Number(screen.value);
+    if (inOperation) secondView = result;
+  }
+};
 
 const initAction = (value, event) => {
-    event && event.stopPropagation();
+  event && event.stopPropagation();
 
-    if (!['reset', '=', '/', 'x', '-', '+', 'del'].includes(value)) {
-        if (value === '.' && screen.value.includes('.')) return;
+  if (!["reset", "=", "/", "x", "-", "+", "del"].includes(value)) {
+    if (value === "." && screen.value.includes(".")) return;
 
-        setNewValue(value);
-
-    } else operations(value)
-}
+    setNewValue(value);
+  } else operations(value);
+};
 
 addThemeNumber(t, toggleRef);
 
-toggleRef.addEventListener('click', e => {
-    e.stopPropagation();
+toggleRef.addEventListener("click", (e) => {
+  e.stopPropagation();
 
-    t = (t === 3) ? 1 : ++t;
+  t = t === 3 ? 1 : ++t;
 
-    addThemeNumber(t, toggleRef);
-})
+  addThemeNumber(t, toggleRef);
+});
 
-buttons.forEach(button => button.addEventListener('click', (e) => initAction(button.value, e)));
+buttons.forEach((button) =>
+  button.addEventListener("click", (e) => initAction(button.value, e))
+);
 
-screen.addEventListener('input', (e) => validateKeyBoardInput(e));
-screen.addEventListener('keypress', ({ keyCode }) => (keyCode === 13) && inOperation && equal.click());
+screen.addEventListener("input", (e) => validateKeyBoardInput(e));
+screen.addEventListener(
+  "keypress",
+  ({ keyCode }) => keyCode === 13 && inOperation && equal.click()
+);
