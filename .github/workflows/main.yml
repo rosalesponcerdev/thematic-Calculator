@@ -49,6 +49,7 @@ jobs:
         env:
           DOMAIN: ${{vars.DOMAIN}}
           SUB_DOMAIN: ${{vars.SUB_DOMAIN}}
+      - run: cat ./devops-nginx.conf
 
       - uses: actions/download-artifact@v4
         with:
