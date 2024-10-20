@@ -63,6 +63,8 @@ jobs:
       - name: testing ipv6 for command
         run: |
           curl -m 9 --ipv6 --verbose https://google.com
+      - name: test
+        run: echo ${{secrets.DOCKER_USERNAME}}
 
       - name: Docker Login
         uses: docker/login-action@v3.3.0
