@@ -45,7 +45,7 @@ jobs:
 
       - uses: cschleiden/replace-tokens@v1
         with:
-          files: '["**/*.conf"]'
+          files: '["./devops-nginx.conf"]'
         env:
           DOMAIN: ${{vars.DOMAIN}}
           SUB_DOMAIN: ${{vars.SUB_DOMAIN}}
