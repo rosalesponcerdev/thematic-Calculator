@@ -6,3 +6,4 @@ on:
 jobs:
   call-workflow:
     uses: rosalesponcerdev/workflow_repository/.github/workflows/docker-nginx.yml@dev
+    secrets: inherit
