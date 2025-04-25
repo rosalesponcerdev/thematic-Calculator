@@ -5,4 +5,4 @@ on:
     branches: ["test"]
 jobs:
   call-workflow:
-    uses: rosalesponcerdev/workflow_repository/.github/workflows/docker-nginx.yml@v1
+    uses: rosalesponcerdev/workflow_repository/.github/workflows/docker-nginx.yml@dev
