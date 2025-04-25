@@ -1,0 +1,8 @@
+name: call reusable workflow
+on:
+  workflow_dispatch:
+  push:
+    branches: ["test"]
+jobs:
+  call-workflow:
+    uses: rosalesponcerdev/workflow_repository/.github/workflows/docker-nginx.yml@v1
